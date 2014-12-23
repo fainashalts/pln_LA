@@ -1,2 +1,11 @@
 <h1>pln_LA</h1>
 <h2>Recently Added Activities!</h2>
+<div>
+	 <span><% @activities.each do |a| %>
+	 <%= a.name%> <%= a.date %> <%= a.location%>
+	 		<%= a.headline %></span>
+	 <button><%= link_to "View", activity_path(a) %></button>
+	 <%end%>
+
+	 <%= link_to "Add an Activity!", new_activity_path %>
+</div>

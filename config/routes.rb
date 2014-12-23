@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # activities routes
   get "activities/" => "activities#index"
 
-  get "activities/:id" => "activities#show", as: :activity
-
   get "activities/new" => "activities#new", as: :new_activity
+
+  get "activities/:id" => "activities#show", as: :activity
 
   post "activities/" => "activities#create"
 
@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   # users routes
   get "users/" => "users#index"
 
-  get "users/:id" => "users#show", as: :user
-
   get "users/new" => "users#new", as: :new_user
+  
+  get "users/:id" => "users#show", as: :user
 
   post "users/" => "users#create"
 

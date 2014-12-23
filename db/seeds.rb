@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+activities = Activity.create([
+	{name: "Nerd Nite LA at the Mint", date: "Tuesday, January 13th", location: "mid-city", headline: "Nerd out with a beer in hand", description: "With talks ranging all over the intellectual spectrum at this monthly event, Nerd Nite Los Angeles is a great opportunity to have a drink, learn something new, and socialize to boot! Tip: the event gets crowded early and often sells out, so plan ahead!"},
+	])

@@ -1,0 +1,19 @@
+<h1>Add Activities Here!</h1>
+
+<%= form_for @activity do |a| %>
+
+	
+	Name: <%= a.text_field :name %>
+	
+	Date: <%= a.text_field :date %>
+	
+	Location: <%= a.text_field :location %>
+	
+	Headline: <%= a.text_field :headline %>
+
+	Description: <%= a.text_field :description %>
+
+	<%= a.submit "Add Activity!" %>
+<%end%>
+
+<%= link_to "Back to Activities", activities_path %>
