@@ -1,7 +1,7 @@
 <h1>Edit Users Here</h1>
 
-<% form_for @user do |u| %>
+<%= form_for @user do |u| %>
 	Name: <%= u.text_field :name %>
-	Events: <%= f.collection_select :activity, Activity.all, :id, :name %>
+	<%= u.submit "Submit these changes!" %>
 
 <%end%>

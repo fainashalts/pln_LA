@@ -3,7 +3,10 @@
 <ul>
 	<% @users.each do |u| %>
 		<li>
-		<%= u.name %>
+		<%= u.name %> <button><%= link_to "View", user_path(u) %></button>
 		</li>
+
 	<%end%>
+
 </ul>
+<%= link_to "Create a new user", new_user_path %>

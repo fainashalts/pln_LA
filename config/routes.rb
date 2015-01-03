@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root "activities#index"
+  
   # activities routes
   get "activities/" => "activities#index"
 

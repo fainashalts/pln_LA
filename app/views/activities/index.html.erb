@@ -1,11 +1,26 @@
-<h1>pln_LA</h1>
-<h2>Recently Added Activities!</h2>
-<div>
-	 <span><% @activities.each do |a| %>
-	 <%= a.name%> <%= a.date %> <%= a.location%>
-	 		<%= a.headline %></span>
-	 <button><%= link_to "View", activity_path(a) %></button>
-	 <%end%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project Two Mockup</title>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+</head>
 
-	 <%= link_to "Add an Activity!", new_activity_path %>
-</div>
+<body>
+	<header>
+		<nav><span>| All Events |</span><span>Login |</span><span>Sign Up |</span></nav>
+		<h1>pln_LA</h1>
+		<p> <em>Your source for making the most of Los Angeles</em> </p>
+	</header>
+
+	<h2>Recently Added Activities!</h2>
+	<div class="events">
+		 <span><% @activities.each do |a| %>
+		 <%= a.name%> <%= a.date %> <%= a.location%>
+		 		<%= a.headline %></span>
+		 <button><%= link_to "View", activity_path(a) %></button>
+		 <%end%>
+
+		 <%= link_to "Add an Activity!", new_activity_path %>
+	</div>
+</body>
