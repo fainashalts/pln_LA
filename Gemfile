@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.3'
+
 gem 'mongoid', '~> 4.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
@@ -14,6 +16,12 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # encryption gem for user model
 gem 'bcrypt', '~> 3.1.9'
+
+# gem to make css work better in heroku
+gem 'rails_12factor', group: :production
+
+# gem for thin
+gem 'thin', group: :production
 
 # image uploading-related gems
 gem 'carrierwave'
