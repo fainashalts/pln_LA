@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
 
 	def show
 		@activity = Activity.find(params[:id])
+		@comment = Comment.new
 	end
 
 	def new
@@ -43,7 +44,7 @@ class ActivitiesController < ApplicationController
 
 	private
 	def  activity_params
-		params.require(:activity).permit(:name, :date, :location, :headline, :description)
+		params.require(:activity).permit(:name, :date, :location, :headline, :description, :image)
 	end
 
 end

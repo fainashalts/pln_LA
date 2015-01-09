@@ -12,6 +12,20 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+# encryption gem for user model
+gem 'bcrypt', '~> 3.1.9'
+
+# image uploading-related gems
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+# needed for Amazon S3
+gem 'fog'
+# needed for post-upload image processing
+gem 'mini_magick'
+
+# figaro gem
+gem 'figaro'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

@@ -1,5 +1,5 @@
 
-<h1>Show User</h1>
+<h1>Welcome, <%= current_user.name %>!</h1>
 <p><%=@user.name%> </p>
 
 <%= link_to "Edit this user", edit_user_path %>

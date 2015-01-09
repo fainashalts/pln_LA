@@ -2,12 +2,22 @@ Rails.application.routes.draw do
 
   root "activities#index"
   
+  # sessions routes
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+
+  # comments route
+
+  post "activities/:activity_id/comments" => "comments#create", as: :activity_comments
+
   # activities routes
   get "activities/" => "activities#index"
 
   get "activities/new" => "activities#new", as: :new_activity
 
-  get "activities/:id" => "activities#show", as: :activity
+  get "activities/:id" => "activities#show", as: :activity 
 
   post "activities/" => "activities#create"
 
@@ -20,7 +30,7 @@ Rails.application.routes.draw do
   # users routes
   get "users/" => "users#index"
 
-  get "users/new" => "users#new", as: :new_user
+  get "/signup" => "users#new", as: :new_user
   
   get "users/:id" => "users#show", as: :user
 

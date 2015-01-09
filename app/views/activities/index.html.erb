@@ -15,7 +15,8 @@
 
 	<h2>Recently Added Activities!</h2>
 	<div class="events">
-		 <span><% @activities.each do |a| %>
+		 <span><% @activities.each do |a| %>		 
+		 <%= image_tag a.image.url %>
 		 <%= a.name%> <%= a.date %> <%= a.location%>
 		 		<%= a.headline %></span>
 		 <button><%= link_to "View", activity_path(a) %></button>

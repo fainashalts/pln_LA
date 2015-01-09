@@ -1,9 +1,32 @@
 <h1>Sign Up Here!</h1>
 
-<%= form_for @user do |u| %>
-
-	Name: <%= u.text_field :name %>
-	<%= u.submit "Add User!" %>
-<%end%>
-
+<ul>
+    <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+</ul>
+<div>
+	<%= form_for @user do |f| %>
+		<div>
+			<%=f.label :name, "Name:" %>
+			<%=f.text_field :name%>
+		</div>
+		<div>
+			<%=f.label :email, "Email:" %>
+			<%=f.text_field :email %>
+		</div>
+		<div>
+			<%=f.label :password, "Password" %>
+			<%=f.password_field :password %>
+		</div>
+		<div>
+			<%=f.label :password_confirmation, "Confirm Password" %>
+			<%=f.password_field :password_confirmation %>
+		</div>
+		<div>
+			<%=f.submit "Join pln_LA!" %>
+		</div>
+	<%end%>
+</div>
+	
 <%= link_to "Back to Activities", activities_path %>
