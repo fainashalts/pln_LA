@@ -3,6 +3,7 @@ class User
   field :name, type: String
   field :email, type: String
   field :password_digest, type: String
+  # field :activity_ids, type: Array
   attr_reader :password
 
   has_and_belongs_to_many :activities

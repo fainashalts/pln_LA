@@ -27,6 +27,8 @@ class UsersController < ApplicationController
 
 		def update
 			@user = User.find(params[:id])
+			@activity = Activity.find(params[:user][:activity_ids][:id])
+			@user.activities.push(@activity)
 			if @user.update_attributes(user_params)
 				redirect_to activities_path
 			else
@@ -42,7 +44,7 @@ class UsersController < ApplicationController
 
 		private
 		def  user_params
-			params.require(:user).permit(:name, :email, :activities, :password, :password_confirmation)
+			params.require(:user).permit(:name, :email, :password, :password_confirmation, :activity_ids => [])
 			
 		end
 

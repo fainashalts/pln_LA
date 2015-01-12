@@ -8,20 +8,23 @@
 
 <body>
 	<header>
-		
 		<h1>pln_LA</h1>
 		<p> <em>Your source for making the most of Los Angeles</em> </p>
 	</header>
 
 	<h2>Recently Added Activities!</h2>
-	<div class="events">
-		 <span><% @activities.each do |a| %>		 
-		 <%= image_tag a.image.url %>
-		 <%= a.name%> <%= a.date %> <%= a.location%>
-		 		<%= a.headline %></span>
-		 <button><%= link_to "View", activity_path(a) %></button>
-		 <%end%>
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+			<% @activities.each do |a| %>		 
+		 			<%= image_tag a.image.url %>
+					<%= a.name%> 
+					<%= a.date %> 
+					<%= a.location%>
+		 			<%= a.headline %>
 
-		 <%= link_to "Add an Activity!", new_activity_path %>
+		 <p class="btn btn-primary" role="button"><%= link_to "View", activity_path(a) %></p>
+		 <%end%>
+		</div>
 	</div>
 </body>

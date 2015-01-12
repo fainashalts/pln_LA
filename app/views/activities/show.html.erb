@@ -2,6 +2,12 @@
 <p><%= @activity.name%>  <%= @activity.date %>  <%= @activity.location %> 
 <%= @activity.headline %><%= @activity.description %> </p>
 
+<%= form_for (current_user) do |f| %>
+	<%= f.fields_for :activity_ids do |a| %>
+		<%= a.hidden_field :id, value: @activity.id %>
+	<%end%>
+<%= f.submit "Add Activity" %>
+<%end%>
 
 <section>
     <h3>Comments</h3>
