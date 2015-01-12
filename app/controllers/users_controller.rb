@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 		def update
 			@user = User.find(params[:id])
 			if @user.update_attributes(user_params)
-				redirect_to users_path
+				redirect_to activities_path
 			else
 				render "edit"
 			end

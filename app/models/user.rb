@@ -23,11 +23,11 @@ class User
   	end
   end
 
-  validates :name, presence: true
+  validates :name, presence: true, on: :create
   
 
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, on: :create
 
-  validates :password, presence: true, length: { in: 6..20}, confirmation: true
+  validates :password, presence: true, length: { in: 6..20}, confirmation: true, on: :create
 
 end
