@@ -3,7 +3,8 @@
 <ul>
 	<% @users.each do |u| %>
 		<li>
-		<%= u.name %> <button><%= link_to "View", user_path(u) %></button>
+		<%= image_tag u.image.url(:thumb) if u.image.url.present?%><%= u.name %>
+		<button><%= link_to "View", user_path(u) %></button>
 		</li>
 
 	<%end%>

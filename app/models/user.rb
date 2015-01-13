@@ -3,10 +3,17 @@ class User
   field :name, type: String
   field :email, type: String
   field :password_digest, type: String
-  # field :activity_ids, type: Array
   attr_reader :password
 
+  mount_uploader :image, AvatarUploader
+
   has_and_belongs_to_many :activities
+
+  # def add_activity(activity_id)
+  #     # @user = User.find(params[:id])
+  #     @activity = Activity.find(activity_id)
+  #     self[:activities].push(@activity)
+  # end
 
   def password=(unencrypted_password)
   	unless unencrypted_password.empty?

@@ -1,7 +1,8 @@
 <h1>Edit Users Here</h1>
 
 <%= form_for @user do |u| %>
-	Name: <%= u.text_field :name %>
+	Username: <%= u.text_field :name %>
+	New Image: <%= u.file_field :image %>
 	<%= u.submit "Submit these changes!" %>
 
 <%end%>

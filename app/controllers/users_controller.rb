@@ -27,8 +27,7 @@ class UsersController < ApplicationController
 
 		def update
 			@user = User.find(params[:id])
-			@activity = Activity.find(params[:user][:activity_ids][:id])
-			@user.activities.push(@activity)
+			# binding.pry
 			if @user.update_attributes(user_params)
 				redirect_to activities_path
 			else
@@ -36,15 +35,24 @@ class UsersController < ApplicationController
 			end
 		end
 
-		def destroy
-			@user = User.find(params[:id]).destroy 
-				redirect_to users_path
+		def add_activity
+			@user = User.find(params[:id])
+			# binding.pry
+			@activity = Activity.find(params[:user][:activity_ids][:id])
+			@user.activities.push(@activity)
+		end
 
+		def destroy
+			@user = User.find(params[:id])
+			if @user.destroy
+				session.delete(:user_id)
+				redirect_to users_path
+			end
 		end
 
 		private
 		def  user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation, :activity_ids => [])
+			params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :activity_ids => [])
 			
 		end
 
