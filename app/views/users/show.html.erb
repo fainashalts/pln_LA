@@ -8,16 +8,19 @@
 <span><%=@user.name%></span>
 
 
-<div>
-	<% @user.activities.each do |a| %>
-		<%= image_tag a.image.url(:thumb) %> 
-		<%= a.name %>
-		<%= a.date %>
-		<%= a.location%>
-		<%= a.description %>
-	<%end%>
+<div class="container-fluid">
+	<div>
+		<% @user.activities.each do |a| %>
+			<%= image_tag a.image.url(:thumb) %> 
+			<%= a.name %>
+			<%= a.date %>
+			<%= a.location%>
+			<%= a.description %>
+		<%end%>
+	</div>
+	<div class="btn-group" role="group" aria-label="...">
+	  <button type="button" class="btn btn-default"><%= link_to "Edit", edit_user_path %></button>
+	  <button type="button" class="btn btn-default"><%= link_to "Delete User", :user, method: :delete, data:{ confirm: "Are you sure you want to delete this user? All information associated with this user will be deleted!"} %></button>
+	  <button type="button" class="btn btn-default"><%= link_to "Back to Activities List", activities_path %></button>
+	</div>
 </div>
-<%= link_to "Edit this user", edit_user_path %>
-<%= link_to "Delete this User", :user, method: :delete, data:{ confirm: "Are you sure you want to delete this user? All information associated with this user will be deleted!"} %>
-<%= link_to "Back to Activities List", activities_path %>
-<%= link_to "All Users", users_path %>
