@@ -22,7 +22,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   version :full do
-    process :resize_to_fit => [1024, 768]
+    process :resize_to_fit => [300, 300]
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

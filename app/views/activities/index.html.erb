@@ -13,17 +13,25 @@
 	</header>
 
 	<h2>Recently Added Activities!</h2>
-	<div class="row">
-		<div class="col-sm-6 col-md-4">
-			<div class="thumbnail">
-			<% @activities.each do |a| %>		 
-		 			<%= image_tag a.image.url %>
-					<%= a.name%> 
-					<%= a.date %> 
-					<%= a.location%>
-		 			<%= a.headline %>
-		 <p class="btn btn-primary" role="button"><%= link_to "View", activity_path(a) %></p>
-		 <%end%>
+		<div class="container-fluid js-masonry"  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
+			
+				<div class="panel panel-default">
+
+		<!-- <div class="col-sm-6 col-md-4">
+			<div class="thumbnail item"> -->		 
+			 		<div class="panel-body">	
+			 			<% @activities.each do |a| %>
+			 			<%= image_tag a.image.url(:thumb) %>
+						<h2><%= a.name%></h2>  
+			 			<h3><%= a.headline %></h3>
+			 			<p><%= a.date %></p>
+			 			<div><p class="btn btn-primary" role="button"><%= link_to "View", activity_path(a) %></p></div>
+			 			<%end%>
+			 		</div>
+			 	</div>
+			<!-- 		</div>
+			</div> -->
+			<!-- </div> -->
 		</div>
-	</div>
+
 </body>
