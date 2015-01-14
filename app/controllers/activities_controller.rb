@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
 skip_before_action :require_login, only: [:index]
 skip_before_action :correct_user
+skip_before_action :admin, only: [:index, :show]
 
 	def index 
 		@activities = Activity.all

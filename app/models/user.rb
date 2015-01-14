@@ -10,6 +10,8 @@ class User
 
   has_and_belongs_to_many :activities
 
+  # embedded_in :comment
+
   # def add_activity(activity_id)
   #     # @user = User.find(params[:id])
   #     @activity = Activity.find(activity_id)

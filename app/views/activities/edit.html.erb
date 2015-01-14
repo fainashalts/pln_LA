@@ -1,12 +1,23 @@
-<h1>Edit Here!</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-offset-4 col-md-offset-2 col-lg-4 col-md-8">
+			<div class="panel panel-success">
+				<div class="panel-body">
+					<h1>Edit Here!</h1>
 
-<%= form_for @activity do |a| %>
-	Name:<%= a.text_field :name %>
-	Date: <%= a.text_field :date %>
-	Location: <%= a.text_field :location %>
-	Headline: <%= a.text_field :headline %>
-	Description: <%= a.text_area :description %>
-	<%= a.submit "Submit these changes!" %>
-<%end%>
+					<%= form_for @activity do |a| %>
+						Name:<%= a.text_field :name %>
+						Date: <%= a.text_field :date %>
+						Location: <%= a.text_field :location %>
+						Headline: <%= a.text_field :headline %>
+						Description: <%= a.text_area :description %>
+						<%= a.submit "Submit these changes!" %>
+					<%end%>
 
-<%= link_to "Back to Activities", activities_path %> 
+					<%= link_to "Back to Activities", activities_path %> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # comments route
 
   post "activities/:activity_id/comments" => "comments#create", as: :activity_comments
+  get "activities/:activity_id/:user_id/comments" => "comments#index"
 
   # activities routes
   get "activities/" => "activities#index"

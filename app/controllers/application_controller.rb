@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :require_login
   before_action :correct_user
+  before_action :admin
 
 
   # Prevent CSRF attacks by raising an exception.
@@ -26,7 +27,16 @@ class ApplicationController < ActionController::Base
 
   def correct_user
   	@user = User.find(params[:id])
-  	redirect_to(users_path) unless @user == current_user || current_user.admin
-  		flash[:error] = "You cannot edit other users!"
+  	unless @user == current_user || current_user.admin?
+  		redirect_to(users_path) 
+      flash[:error] = "You cannot edit other users!"
+    end
+  end
+
+  def admin
+    unless current_user.admin
+      redirect_to activities_path 
+      flash[:admin] = "Must be administrator to do that!"
+    end
   end
 end

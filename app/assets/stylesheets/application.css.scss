@@ -27,6 +27,8 @@ body{
 }
 .jumbotron {
 	text-align: center;
+	height: 15px;
+	background-color: transparent
 }
 
 // .item {
@@ -34,6 +36,42 @@ body{
 // 	margin: 10px; 
 // }
 
-.grid-sizer {
-	width: 25%;
+// .grid-sizer {
+// 	width: 25%;
+// }
+
+input {
+	color: black;
+	background-color: #BADEBF;
 }
+
+ul {
+	list-style-type: none;
+}
+// #branding {
+// 	color: black;
+// }
+#activity-photo {
+	text-align: center;
+}
+#activity-photo img {
+	border-radius: 5%;
+	border: 10px solid black;
+}
+#activity-description {
+	text-align: center; 
+	background-color: white;
+	border-radius: 2%;
+}
+
+#user-photo {
+	text-align: center;
+}
+#user-photo img {
+	border-radius: 5%;
+	border: 10px solid black;
+}
+// #user-activities {
+// 	display: table-cell; 
+// 	vertical-align: middle;
+// }

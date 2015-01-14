@@ -1,14 +1,24 @@
-<h1>Users</h1>
 
-<ul>
-	<% @users.each do |u| %>
-		<li>
-		<%= image_tag u.image.url(:thumb) if u.image.url.present?%><%= u.name %>
-		<button><%= link_to "View", user_path(u) %></button>
-		</li>
+<h1 class="jumbotron"> pln_LA Users</h1>
 
-	<%end%>
+<div class="container-fluid">
+	<div class="row">	
+		<ul>
+			<% @users.each do |u| %>
+				<div class="col-lg-2 col-md-4 col-sm-6">
+					<div class="panel panel-success">
+						<div class="panel-body">
+							<li>
+							<%= image_tag u.image.url(:thumb) if u.image.url.present?%>
+							<div><strong><%= u.name %></strong></div>
+							<%= link_to "View", user_path(u) %>
+							</li>
+						</div>
+					</div>
+				</div>
 
-</ul>
-<%= link_to "Sign Up", new_user_path %>
-<%= link_to "plnLA Home", activities_path %>
+			<%end%>
+		</ul>
+
+	</div>
+</div>

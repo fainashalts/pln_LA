@@ -1,8 +1,28 @@
-<h1>Edit Users Here</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-offset-4 col-md-offset-2 col-lg-4 col-md-8">
+			<div class="panel panel-success">
+				<div class="panel-body">
+					<% unless current_user.admin %><h1>Welcome,<%= current_user.name %>!<%end%></h1>
+					<h2>Edit profile here:</h2>
 
-<%= form_for @user do |u| %>
-	Username: <%= u.text_field :name %>
-	New Image: <%= u.file_field :image %>
-	<%= u.submit "Submit these changes!" %>
-
-<%end%>
+					<div>
+						<%= form_for @user do |u| %>
+							<div>
+								<%=u.label :name, "Name:" %>
+								<%=u.text_field :name%>
+							</div>
+							<div>
+								<%= u.label :image, "New Image:" %>	
+							 	<%= u.file_field :image %>
+							</div>
+							<div>
+								<%= u.submit "Submit these changes!" %>
+							</div>
+						<%end%>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

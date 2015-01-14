@@ -1,37 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Project Two Mockup</title>
-	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style.css">
-</head>
 
-<body>
-	<header>
-		<h1>pln_LA</h1>
-		<p> <em>Your source for making the most of Los Angeles</em> </p>
-	</header>
+<h1 class="jumbotron">pln_LA</h1>
 
-	<h2>Recently Added Activities!</h2>
-		<div class="container-fluid js-masonry"  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
-			
-				<div class="panel panel-default">
 
-		<!-- <div class="col-sm-6 col-md-4">
-			<div class="thumbnail item"> -->		 
-			 		<div class="panel-body">	
-			 			<% @activities.each do |a| %>
-			 			<%= image_tag a.image.url(:thumb) %>
-						<h2><%= a.name%></h2>  
-			 			<h3><%= a.headline %></h3>
-			 			<p><%= a.date %></p>
-			 			<div><p class="btn btn-primary" role="button"><%= link_to "View", activity_path(a) %></p></div>
-			 			<%end%>
+<div class="container-fluid">
+	<div class="row">	
+		<ul>
+			<% @activities.each do |a| %>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="panel panel-success">
+			 		<div class="panel-body">
+			 			<li>
+				 			<%= image_tag a.image.url(:thumb) %>	
+							<h2><%= a.name%></h2>  
+				 			<h3><%= a.headline %></h3>
+				 			<p><%= a.date %></p>
+					 		<strong><%= link_to "View", activity_path(a) %></strong>
+					 	</li>
 			 		</div>
 			 	</div>
-			<!-- 		</div>
-			</div> -->
-			<!-- </div> -->
-		</div>
+			 </div>
+			<%end%>
+		</ul>
+	</div>
+</div>
 
 </body>

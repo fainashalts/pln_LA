@@ -17,7 +17,7 @@
 					<span class="icon-bar"></span> 
 					<span class="icon-bar"></span> 
 				</button>
-				<span class="navbar-brand"><%= link_to "plnLA", activities_path %></span>
+				<span id="branding" class="navbar-brand"><%= link_to "pln_LA", activities_path %></span>
 				<p class="navbar-text">Your source for making the most of Los Angeles</p>
 			</div>
 			<div id="navbarCollapse" class="collapse navbar-collapse">
@@ -29,6 +29,7 @@
 					<li><%= link_to "Sign Up", new_user_path %></li>
 					<% end %>
 					<li><%= link_to "Users", users_path %></li>
+					<li><%= link_to "Activities", activities_path %></li>
 				</ul>
 			</div>
 		</div>
@@ -41,6 +42,9 @@
 <%end%>
 <% if flash[:error] %>
 	<%= flash[:error] %>
+<%end%>
+<% if flash[:admin] %>
+	<%= flash[:admin] %>
 <%end%>
 
 <%= yield %>

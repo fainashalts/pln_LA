@@ -8060,4 +8060,17 @@ body {
 /* line 29, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
 .jumbotron {
   text-align: center;
+  height: 15px;
+  background-color: transparent;
+}
+
+/* line 44, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+input {
+  color: black;
+  background-color: #BADEBF;
+}
+
+/* line 49, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+ul {
+  list-style-type: none;
 }
