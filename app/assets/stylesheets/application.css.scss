@@ -57,6 +57,7 @@ ul {
 #activity-photo img {
 	border-radius: 5%;
 	border: 10px solid black;
+	margin: 0 auto;
 }
 #activity-description {
 	text-align: center; 
@@ -70,6 +71,9 @@ ul {
 #user-photo img {
 	border-radius: 5%;
 	border: 10px solid black;
+}
+#activity-index {
+	text-align: center;
 }
 // #user-activities {
 // 	display: table-cell; 

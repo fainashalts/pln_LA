@@ -1,6 +1,6 @@
 
 <h1 class="jumbotron"><%= @activity.name%></h1>
-<div id="activity-photo"><%= image_tag @activity.image.url(:full) %></div>	
+<div id="activity-photo"><img class="img-responsive" <%= image_tag @activity.image.url(:full) %>"></div>	
 </br>
 	<div class="container">
 		<div class="row">
