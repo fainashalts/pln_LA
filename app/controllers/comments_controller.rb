@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+skip_before_action :require_login
+skip_before_action :correct_user
 
 	def create
 		activity = Activity.find(params[:activity_id])
