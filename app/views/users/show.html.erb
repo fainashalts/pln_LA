@@ -1,6 +1,7 @@
 
+<h1><%= @user.name %>
 <div>
-<div id="user-photo"><%= image_tag @user.image.url if @user.image.url.present?%></div>
+<div id="user-photo"><img class="img-responsive"<%= image_tag @user.image.url if @user.image.url.present?%>></div>
 
 
 </br>
