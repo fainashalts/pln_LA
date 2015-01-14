@@ -19,6 +19,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def default_url
   #   "/images/" + [version_name, "default.png"].compact.join('')
   # end  
+
+  def default_url
+    "birds.png"
+  end
   
   version :thumb do
     process :resize_to_fill => [100, 100]
