@@ -16,3 +16,10 @@
 //= require masonry.pkgd
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+  $('.has-tooltip').tooltip();
+  $('.has-popover').popover({
+    trigger: 'hover'
+  });
+});

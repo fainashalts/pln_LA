@@ -14,7 +14,8 @@
 							<h2><%= a.name%></h2>  
 				 			<h3><%= a.headline %></h3>
 				 			<p><%= a.date %></p>
-					 		<strong><%= link_to "View", activity_path(a) %></strong>
+					 		<button type="button" class="btn btn-link"><strong><%= link_to "View", activity_path(a) %></strong></button>
+					 		<!-- <button type="button" class="btn btn-link has-popover" data-toggle="popover" text-content=<%#= a.description %>> Quick View </button> -->
 					 	</li>
 			 		</div>
 			 	</div>
