@@ -23,11 +23,16 @@ class UsersController < ApplicationController
 
 		def edit
 			@user = User.find(params[:id])
+			# @activity = Activity.find(params[:user][:activity_ids][:id])
 		end
 
 		def update
 			@user = User.find(params[:id])
 			# binding.pry
+			# if params[:user][:activity_ids][:id]
+			# 	@activity = Activity.find(params[:user][:activity_ids][:id])
+			# 	@user.activities.push(@activity)
+			# end
 			if @user.update_attributes(user_params)
 				redirect_to activities_path
 			else
@@ -36,10 +41,11 @@ class UsersController < ApplicationController
 		end
 
 		def add_activity
-			@user = User.find(params[:id])
+			@user = User.find(params[:user][:id])
 			# binding.pry
 			@activity = Activity.find(params[:user][:activity_ids][:id])
 			@user.activities.push(@activity)
+			redirect_to activities_path
 		end
 
 		def destroy

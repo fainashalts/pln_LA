@@ -36,13 +36,16 @@ Rails.application.routes.draw do
 
   post "users/" => "users#create"
 
+
   get "users/:id/edit" => "users#edit", as: :edit_user
 
-  patch "users/:id/:activity_ids" => "users#add_activity"
-
-  patch "users/:id" => "users#update"
+  patch "users/:id/add_activity" => "users#add_activity", as: :add_activity
+  
+  patch "users/:id" => "users#update", as: :update_user
 
   delete "users/:id" => "users#destroy"
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
