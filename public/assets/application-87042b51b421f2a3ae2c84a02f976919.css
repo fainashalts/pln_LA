@@ -8075,7 +8075,53 @@ ul {
   list-style-type: none;
 }
 
-/* line 52, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
-#branding {
-  color: black;
+/* line 55, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#activity-photo {
+  text-align: center;
+}
+
+/* line 58, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#activity-photo img {
+  border-radius: 5%;
+  border: 10px solid black;
+  margin: 0 auto;
+}
+
+/* line 63, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#activity-description {
+  text-align: center;
+  background-color: white;
+  border-radius: 2%;
+}
+
+/* line 69, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#user-photo {
+  text-align: center;
+}
+
+/* line 72, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#user-photo img {
+  border-radius: 5%;
+  border: 10px solid black;
+  margin: 0 auto;
+}
+
+/* line 77, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#activity-index {
+  text-align: center;
+}
+
+/* line 80, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#user-profile {
+  text-align: center;
+}
+
+/* line 83, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#user-activities {
+  text-align: center;
+}
+
+/* line 86, /Users/fainashalts/wdi/projects/project_2/pln_LA/pln_LA/app/assets/stylesheets/application.css.scss */
+#user-index {
+  text-align: center;
 }
