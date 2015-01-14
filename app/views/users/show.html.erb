@@ -1,8 +1,8 @@
 
-<h1><%= @user.name %>
-<div>
-<div id="user-photo"><img class="img-responsive"<%= image_tag @user.image.url if @user.image.url.present?%>></div>
-
+<div id="user-profile">
+	<h1><%= @user.name %></h1>
+	<div id="user-photo"><img class="img-responsive" <%= image_tag @user.image.url(:full) %></div>	
+</div>
 
 </br>
 </br>
