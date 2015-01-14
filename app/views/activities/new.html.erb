@@ -8,17 +8,17 @@
 					<%= form_for @activity do |a| %>
 
 						
-						Name: <%= a.text_field :name %>
+						Name: <%= a.text_field :name %></br>
 						
-						Date: <%= a.text_field :date %>
+						Date: <%= a.text_field :date %></br>
 						
-						Location: <%= a.text_field :location %>
+						Location: <%= a.text_field :location %></br>
 						
-						Headline: <%= a.text_field :headline %>
+						Headline: <%= a.text_field :headline %></br>
 
-						Description: <%= a.text_area :description %>
+						Description: <%= a.text_area :description %></br>
 
-						Image: <%= a.file_field :image %>
+						Image: <%= a.file_field :image %></br>
 
 						<%= a.submit "Add Activity!" %>
 					<%end%>
