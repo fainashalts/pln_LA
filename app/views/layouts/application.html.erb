@@ -37,15 +37,17 @@
 </header>
 
 
-<% if flash[:notice] %>
-	<%= flash[:notice] %>
-<%end%>
-<% if flash[:error] %>
-	<%= flash[:error] %>
-<%end%>
-<% if flash[:admin] %>
-	<%= flash[:admin] %>
-<%end%>
+<div id="flashes">
+	<% if flash[:notice] %>
+		<%= flash[:notice] %>
+	<%end%>
+	<% if flash[:error] %>
+		<%= flash[:error] %>
+	<%end%>
+	<% if flash[:admin] %>
+		<%= flash[:admin] %>
+	<%end%>
+</div>
 
 <%= yield %>
 
