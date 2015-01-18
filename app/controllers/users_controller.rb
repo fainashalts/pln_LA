@@ -54,8 +54,10 @@ skip_before_action :admin
 		def destroy
 			@user = User.find(params[:id])
 			if @user.destroy
-				session.delete(:user_id)
-				unless @user.admin
+				unless @user = current_user.admin
+					session.delete(:user_id)
+					redirect_to users_path
+				else
 					redirect_to users_path
 				end
 			end
