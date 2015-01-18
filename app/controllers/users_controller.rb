@@ -55,7 +55,9 @@ skip_before_action :admin
 			@user = User.find(params[:id])
 			if @user.destroy
 				session.delete(:user_id)
-				redirect_to users_path
+				unless @user.admin
+					redirect_to users_path
+				end
 			end
 		end
 
