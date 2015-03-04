@@ -9,6 +9,7 @@ skip_before_action :admin, only: [:index, :show]
 
 	def show
 		@activity = Activity.find(params[:id])
+		@location = @activity.location.split().join("%20")
 		@comment = Comment.new
 	end
 
