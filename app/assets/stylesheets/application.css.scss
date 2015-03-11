@@ -63,7 +63,7 @@ ul {
 #activity-description {
 	text-align: center; 
 	background-color: white;
-	border-radius: 2%;
+  display: inline-block;
 }
 
 #user-photo {
@@ -102,6 +102,23 @@ ul {
   border-radius: 10%;
   border: 3px solid blue;
 }
+iframe {
+  float: right;
+}
+div#left-side-activities {
+ 
+  display: inline;
+}
+#google-map {
+  vertical-align: top; 
+  display: inline-block;
+  float: right;
+}
+
+// #map {
+//   border: 5px solid black;
+//   border-radius: 5%;
+// }
 // #left-side-activities {
 // 	float: left;
 // }

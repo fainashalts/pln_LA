@@ -1,70 +1,70 @@
 
 <h1 class="jumbotron"><%= @activity.name%></h1>
 <div id="left-side-activities">
-	<div id="activity-photo"><img class="img-responsive" <%= image_tag @activity.image.url(:full) %></div>	
-	</br>
-<div id="right-side-activities"
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-offset-4 col-md-offset-2 col-lg-4 col-md-8 col-sm-12" id="activity-description">
-				<div>
-				<h3><%= @activity.date %>, <%= @activity.location %></h3>
-				</br>
-				<p><%= @activity.headline %><%= @activity.description %></p>
-				<div>
-					<%= form_for current_user, :url => add_activity_path do |f| %>
-						<%= f.hidden_field :id, value: current_user.id %>
-						<%= f.fields_for :activity_ids do |a| %>
-							<%= a.hidden_field :id, value: @activity.id %>
-						<%end%>
-					<%= f.submit "Add Activity" %>
-					<%end%>
-				</div>
-			</div>	
-		</div>
-	</div>
-</div>
-
-</br>		
-
+	
 <div class="container">
 		<div class="row">
-			<div class="col-lg-offset-4 col-md-offset-2 col-lg-4 col-md-8 col-sm-12" id="activity-description">
-				<div>
-					<section>
-					    <h3>Comments</h3>
-					    <div>
-					        <% @activity.comments.each do |comment| %>        
-					            <div>
-					                <p><%= comment.body %></p>
-					            </div>
-					        <% end %>
-					    </div>
-					</section>
+			<div class="col-lg-7 col-md-8 col-sm-12" id="activity-photo"><img class="img-responsive" <%= image_tag @activity.image.url(:full) %></div></br>
+		
+		  <div class="col-lg-7 col-md-8 col-sm-12" id="activity-description">
+		  	<div>
+		  		<h3><%= @activity.date %>, <%= @activity.location %></h3>
+		  		</br>
+		  		<p><%= @activity.headline %><%= @activity.description %></p>
+		  		<div>
+		  			<%= form_for current_user, :url => add_activity_path do |f| %>
+		  				<%= f.hidden_field :id, value: current_user.id %>
+		  				<%= f.fields_for :activity_ids do |a| %>
+		  					<%= a.hidden_field :id, value: @activity.id %>
+		  				<%end%>
+		  			<%= f.submit "Add Activity" %>
+		  			<%end%>
+		  		</div>
+		  	</div>	
+		  </div>
+		  </br>
 
-					<section>
-						
-						<%= form_for [@activity, @comment] do |f|%>
-							<div>
-								<%= f.label :body, "Your Comment:" %>
-								</br>
-								<%= f.text_area :body %>
-								<%#= f.hidden_field @user, value: :name %>
-							</div>
-							<%= f.submit "Add a Comment!" %>
-						<%end%>
-					</section>
-				</div>
-			</div>
+		  <span id="google-map" class="col-lg-5 col-md-6 col-sm-12">
+		  	<iframe width="450" height="420" frameborder="0" style="border: 5px solid black"
+		  	src="https://www.google.com/maps/embed/v1/place?q=<%=@location%>&key=<%= ENV['MAP_API_KEY']%>"></iframe>
+		  </span>
+
+		  <div class="col-lg-7 col-md-8 col-sm-12" id="activity-description">
+		  	<div>
+		  		<section>
+		  		    <h3>Comments</h3>
+		  		    <div>
+		  		        <% @activity.comments.each do |comment| %>        
+		  		            <div>
+		  		                <p><%= comment.body %></p>
+		  		            </div>
+		  		        <% end %>
+		  		    </div>
+		  		</section>
+
+		  		<section>
+		  			
+		  			<%= form_for [@activity, @comment] do |f|%>
+		  				<div>
+		  					<%= f.label :body, "Your Comment:" %>
+		  					</br>
+		  					<%= f.text_area :body %>
+		  					<%#= f.hidden_field @user, value: :name %>
+		  				</div>
+		  				<%= f.submit "Add a Comment!" %>
+		  			<%end%>
+		  		</section>
+		  	</div>
+		  </div>
+
+
+
 		</div>
-	</div>
 </div>
 
-<div>
-	<iframe width="600" height="450" frameborder="0" style="border:0"
-	src="https://www.google.com/maps/embed/v1/place?q=<%=@location%>&key=<%= ENV['MAP_API_KEY']%>"></iframe>
 
-</div>
+
+
 
 <% if current_user.admin %>
 <p><%= link_to "Edit this activity", edit_activity_path %></p>
