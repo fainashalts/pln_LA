@@ -62,7 +62,7 @@ ul {
 }
 #activity-description {
 	text-align: center; 
-	background-color: white;
+	background-color: #9EDBC9;
   display: inline-block;
 }
 
@@ -91,9 +91,12 @@ ul {
 	text-align: center;
 	font-size: 30px;
 }
-.panel {
+.custom-panels {
 	border-radius: 5%;
 	background-color: #9EDBC9;
+  margin: 8px;
+  padding: 10px;
+  border: 1px solid white;
 }
 #branding {
   color: black;
@@ -113,6 +116,9 @@ div#left-side-activities {
   vertical-align: top; 
   display: inline-block;
   float: right;
+}
+#panels {
+  vertical-align: top;
 }
 
 // #map {
