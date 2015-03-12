@@ -48,7 +48,7 @@ skip_before_action :admin, only: [:index, :show]
 
 	private
 	def  activity_params
-		params.require(:activity).permit(:name, :date, :location, :headline, :description, :image)
+		params.require(:activity).permit(:name, :date, :location, :headline, :description, :image, :gohere)
 	end
 
 end

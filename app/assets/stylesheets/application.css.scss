@@ -120,7 +120,13 @@ div#left-side-activities {
 #panels {
   vertical-align: top;
 }
-
+#url {
+  color: black;
+  display: block;
+  border: 1px solid black;
+  width: 20%;
+  margin: 0 auto;
+}
 // #map {
 //   border: 5px solid black;
 //   border-radius: 5%;

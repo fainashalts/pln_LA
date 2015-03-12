@@ -5,6 +5,7 @@ class Activity
   field :location, type: String
   field :headline, type: String
   field :description, type: String
+  field :gohere, type: String, default: "http://www.google.com"
 
   mount_uploader :image, AvatarUploader
 

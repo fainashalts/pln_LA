@@ -12,6 +12,9 @@
 		  		<h4><%= @activity.location %></h4>
 		  		</br>
 		  		<p><%= @activity.headline %><%= @activity.description %></p>
+		  		</br>
+		  		<a id="url" href="<%= @activity.gohere %>">More Information</a>
+		  		</br>
 		  		<div>
 		  			<%= form_for current_user, :url => add_activity_path do |f| %>
 		  				<%= f.hidden_field :id, value: current_user.id %>
